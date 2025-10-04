@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Stlite App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.js"
+    ></script>
+  </head>
+  <body>
+    <streamlit-app>
+      import streamlit as st
+
+      st.sidebar.title("目次")
+      st.sidebar.markdown("""
+      - [名前](#名前)
+      - [SNS](#sns)
+      - [経歴](#経歴)
+      - [スキル](#スキル)
+      - [資格](#資格)
+      - [登壇](#登壇)
+      - [その他](#その他)
+      """)
+
+      st.title("名前")
+      st.write("向井雄二")
+
+      st.header("SNS")
+      col1, col2 = st.columns(2)
+      with col1:
+          st.markdown("**サービス**")
+          st.write("X")
+          st.write("Linkedin")
+          st.write("Qiita")
+          st.write("Zenn")
+          st.write("SpeakerDeck")
+      with col2:
+          st.markdown("**URL**")
+          st.markdown("[https://x.com/ugmuka](https://x.com/ugmuka)")
+          st.markdown("[https://www.linkedin.com/in/muka1206/](https://www.linkedin.com/in/muka1206/)")
+          st.markdown("[https://qiita.com/ugmuka](https://qiita.com/ugmuka)")
+          st.markdown("[https://zenn.dev/ugmuka](https://zenn.dev/ugmuka)")
+          st.markdown("[https://speakerdeck.com/](https://speakerdeck.com/)")
+
+      st.header("経歴")
+      st.subheader("2020/04/01-現在")
+      st.write("DATUM STUDIO（株）データエンジニア")
+
+      st.subheader("携わったプロジェクト")
+      st.markdown("""
+      - スポーツクラブ向けの顧客分析基盤の構築
+      - 動画プラットフォームにおける視聴ログ分析基盤の構築
+      - テレビ局向け広告配信用基盤構築
+      - ECサイトの全社向け顧客分析基盤の移行刷新
+      - 不動産事業における事業間横断顧客分析基盤の構築
+      - 決算業務に用いる経理BIの移行刷新
+      - 自動車センサーデータ集積基盤の移行刷新
+      """)
+
+      st.header("スキル")
+      st.subheader("language")
+      st.markdown("- Python\n- SQL\n- PHP\n- Typescript")
+
+      st.subheader("application flamework")
+      st.markdown("- laravel\n- react")
+
+      st.subheader("cloud")
+      st.markdown("- AWS\n- GCP\n- Snowflake")
+
+      st.subheader("infratsructure tools")
+      st.markdown("- terraform")
+
+      st.subheader("data enginnering tools")
+      st.markdown("- dbt(core/cloud)\n- airflow\n- Spark")
+
+      st.subheader("BI tools")
+      st.markdown("- Looker\n- PowerBI")
+
+      st.subheader("others")
+      st.markdown("- github action")
+
+      st.header("資格")
+      st.markdown("""
+      - 応用情報技術者
+      - AWS solution architect professional
+      - AWS data analytics specialty
+      - GCP Professional data engineer
+      - SnowPro Advanced Architect
+      """)
+
+      st.header("登壇")
+      st.markdown("""
+      | 日付 | イベント | タイトル | 資料 |
+      |:-----|:---------|:---------|:-----|
+      | 2022/08/23 | dbt Tokyo meetup | rawSQLからdbtへの移行プロセスについて | [資料](https://speakerdeck.com/ugmuka/rawsqlkaradbthefalseyi-xing-purosesunituite) |
+      | 2022/12/14 | ちゅらコラボ | 1年間dbtで戦った話 | [資料](https://speakerdeck.com/ugmuka/14-tiyurakorabodeng-tan-zi-liao) |
+      | 2023/01/26 | Data Engineer Geeks | Snowparkを基礎からおさらい | [資料](https://speakerdeck.com/ugmuka/snowparkwoji-chu-karaosarai) |
+      | 2023/05/28 | Snowflakeの小技LT〜ChatGPTも知らない？秘密のテクニック教えて！〜 | Snowflakeでやらかした時の対処法 | [資料](https://speakerdeck.com/ugmuka/snowflakedeyarakasitashi-nodui-chu-fa) |
+      """)
+
+      st.header("その他")
+      st.markdown("""
+      知人のプロダクト[Actice](https://actice.page/)の開発を支援する。
+      各マイクロサービスのうちの一つを担当。フロントをReact、バックエンドをlaravelで実装した。
+      """)
+    </streamlit-app>
+  </body>
+</html>
