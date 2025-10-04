@@ -1,0 +1,32 @@
+{
+    "name": "dbt Development Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/anthropics/devcontainer-features/claude-code:latest": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Anthropic.claude-code",
+                "EditorConfig.EditorConfig",
+                "eamodio.gitlens"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "files.autoSave": "afterDelay"
+            }
+        }
+    },
+    "forwardPorts": [],
+    "mounts": [],
+    "postCreateCommand": "echo complete.",
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspaces/ugmuka.github.io",
+    "runArgs": []
+}
