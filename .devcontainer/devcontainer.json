@@ -23,7 +23,9 @@
             }
         }
     },
-    "forwardPorts": [],
+    "forwardPorts": [
+        8080
+    ],
     "mounts": [],
     "postCreateCommand": "echo complete.",
     "remoteUser": "vscode",
