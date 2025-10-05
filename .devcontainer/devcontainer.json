@@ -27,7 +27,7 @@
         8080
     ],
     "mounts": [],
-    "postCreateCommand": "echo complete.",
+    "postCreateCommand": "make init",
     "remoteUser": "vscode",
     "workspaceFolder": "/workspaces/ugmuka.github.io",
     "runArgs": []
