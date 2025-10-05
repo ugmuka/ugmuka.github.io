@@ -5,4 +5,8 @@ init:
 	npm install -g http-server
 	nohup http-server &
 
+
+	# install chrome
+	# sudo apt install -y chromium chromium-driver
+
 	echo completed.

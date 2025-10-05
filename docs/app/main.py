@@ -1,37 +1,29 @@
 import streamlit as st
 
-st.sidebar.title("目次")
-st.sidebar.markdown("""
-- [名前](#名前)
-- [SNS](#sns)
-- [経歴](#経歴)
-- [スキル](#スキル)
-- [資格](#資格)
-- [登壇](#登壇)
-- [その他](#その他)
-""")
+# --- GENERAL SETTINGS ---
+NAME = "向井雄二"
+DESCRIPTION = "Data Engineer"
+EMAIL = "ugmuka1@gmail.com"
+SOCIAL_MEDIA = {
+    "X": "https://x.com/ugmuka",
+    "LinkedIn": "https://www.linkedin.com/in/muka1206/",
+    "Qiita": "https://qiita.com/ugmuka",
+    "Zenn": "https://zenn.dev/ugmuka",
+    "SpeakerDeck": "https://speakerdeck.com/ugmuka",
+}
 
-st.title("名前")
-st.write("向井雄二")
+# --- SIDEBAR ---
+with st.sidebar:
+    st.title(NAME)
+    st.write(DESCRIPTION)
+    st.write("📫", EMAIL)
 
-st.header("SNS")
-col1, col2 = st.columns(2)
-with col1:
-    st.markdown("**サービス**")
-    st.write("X")
-    st.write("Linkedin")
-    st.write("Qiita")
-    st.write("Zenn")
-    st.write("SpeakerDeck")
-with col2:
-    st.markdown("**URL**")
-    st.markdown("[https://x.com/ugmuka](https://x.com/ugmuka)")
-    st.markdown(
-        "[https://www.linkedin.com/in/muka1206/](https://www.linkedin.com/in/muka1206/)"
-    )
-    st.markdown("[https://qiita.com/ugmuka](https://qiita.com/ugmuka)")
-    st.markdown("[https://zenn.dev/ugmuka](https://zenn.dev/ugmuka)")
-    st.markdown("[https://speakerdeck.com/](https://speakerdeck.com/)")
+    st.write("\n")
+    st.subheader("SNS")
+    cols = st.columns(len(SOCIAL_MEDIA))
+    for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
+        cols[index].write(f"[{platform}]({link})")
+
 
 st.header("経歴")
 st.subheader("2020/04/01-現在")
@@ -58,10 +50,10 @@ st.markdown("- laravel\n- react")
 st.subheader("cloud")
 st.markdown("- AWS\n- GCP\n- Snowflake")
 
-st.subheader("infratsructure tools")
+st.subheader("infrastructure tools")
 st.markdown("- terraform")
 
-st.subheader("data enginnering tools")
+st.subheader("data engineering tools")
 st.markdown("- dbt(core/cloud)\n- airflow\n- Spark")
 
 st.subheader("BI tools")
