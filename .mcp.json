@@ -4,8 +4,7 @@
       "type": "stdio",
       "command": "npx",
       "args": [
-        "chrome-devtools-mcp@latest",
-        "--browserUrl=http://127.0.0.1:8080/docs"
+        "chrome-devtools-mcp@latest"
       ]
     }
   }
