@@ -1,36 +1,48 @@
 # CLAUDE.md
 
-このファイルは、リポジトリで作業する際の Claude Code (claude.ai/code) へのガイダンスを提供します。
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## プロジェクト概要
 
-GitHub Pages でホスティングされる個人ポートフォリオサイトです。Vite + React + TypeScript で構築した静的サイトで、`npm run build` で `docs/` に出力します。WebAssembly ランタイム不要。
+GitHub Pages でホスティングされる個人ポートフォリオサイトです。Vite + React + TypeScript + Tailwind CSS v4 で構築した静的サイトで、`npm run build` で `docs/` に出力します。
 
 ## アーキテクチャ
 
-- **エントリーポイント**: `index.html`（ルート）- Vite が処理し `src/main.tsx` をマウント
-- **アプリケーション**: `src/` - React コンポーネント群
-- **コンテンツデータ**: `src/data/portfolio.ts` - ポートフォリオコンテンツの唯一の定義元
-- **コンポーネント**: `src/components/` - セクション別コンポーネント（Header, Profile, Experience, Skills, Certifications, Talks, Others）
+- **エントリーポイント**: `index.html` → Vite が `src/main.tsx` をマウント
+- **データレイヤー**: `src/data/portfolio.ts` — ポートフォリオコンテンツの唯一の定義元。全コンポーネントがここから直接 import する（Props は使わない）
+- **コンポーネント**: `src/components/` — セクション別（Header, Profile, Experience, Skills, Certifications, Talks, Others）、`src/App.tsx` が順に並べる
+- **スタイリング**: Tailwind CSS v4（`@tailwindcss/vite` プラグイン経由、PostCSS 設定不要）+ `src/index.css` のカスタムデザインシステム
 - **デプロイ**: GitHub Pages が `docs/` ディレクトリの静的ファイルを配信
+
+## デザインシステム
+
+`src/index.css` で定義。コンポーネント側でクラスを直接使う。
+
+**CSS カスタムプロパティ（デザイントークン）**:
+- `--bg-primary` (#07080f) / `--bg-surface` / `--bg-subtle` — 背景3階層
+- `--text-primary` / `--text-muted` — テキスト
+- `--accent` (#ffb800) — アンバー系アクセントカラー
+- `--border` — 境界線
+
+**ユーティリティクラス**: `.card`（ホバー時グロウ）、`.tag`、`.btn-ghost`、`.nav-link`、`.section-number`、`.timeline-line` / `.timeline-dot`
+
+**フォント**: Syne（Display）、DM Sans（Body）、JetBrains Mono（Mono）、Noto Sans JP（日本語）
 
 ## 開発コマンド
 
-### ローカル開発
 ```bash
-npm run dev       # Vite 開発サーバー起動 → http://localhost:5173
-npm run build     # docs/ にビルド出力
+npm run dev       # Vite 開発サーバー → http://localhost:5173
+npm run build     # TypeScript チェック + docs/ にビルド出力
+npm run preview   # ビルド済みサイトを Vite でプレビュー
+npm run lint      # ESLint チェック
+npx http-server   # http-server で静的配信 → http://127.0.0.1:8080/docs
 ```
 
-### ビルド済みサイトのプレビュー
-```bash
-npx http-server   # 起動 → http://127.0.0.1:8080/docs
-```
+テストのセットアップはなし（lint のみ）。
 
-### リント
-```bash
-npm run lint
-```
+## TypeScript 設定
+
+`tsconfig.app.json` で `noUnusedLocals` / `noUnusedParameters` が有効。未使用の変数・パラメータはビルドエラーになる。
 
 ## MCP インテグレーション
 
@@ -42,15 +54,6 @@ npm run lint
 - **Chromium + chromium-driver** をブラウザ自動化用にインストール
 - **ポート 8080** をローカル開発アクセス用にフォワード
 - Claude Code、Node.js LTS、Docker-in-Docker 機能を含む
-
-## 主要ファイル
-
-- `index.html` - Vite エントリーポイント
-- `src/data/portfolio.ts` - ポートフォリオコンテンツデータ（ここを編集してコンテンツ更新）
-- `src/components/` - セクション別 React コンポーネント
-- `src/App.tsx` - ページ全体レイアウト
-- `vite.config.ts` - Vite 設定（`build.outDir: 'docs'`）
-- `.mcp.json` - MCP サーバー設定（chrome-devtools）
 
 
 # AI-DLC とスペック駆動開発
