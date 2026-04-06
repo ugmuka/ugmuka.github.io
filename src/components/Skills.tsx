@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
               <div
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.65rem',
+                  fontSize: '0.75rem',
                   letterSpacing: '0.12em',
                   color: 'var(--text-muted)',
                   width: '11rem',

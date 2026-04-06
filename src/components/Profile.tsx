@@ -10,7 +10,7 @@ const Profile: React.FC = () => {
         position: 'relative',
         overflow: 'hidden',
         padding: '5rem 1.5rem 4rem',
-        minHeight: '72vh',
+        minHeight: '60vh',
         display: 'flex',
         alignItems: 'center',
       }}
@@ -67,7 +67,6 @@ const Profile: React.FC = () => {
             fontSize: 'clamp(3rem, 8vw, 6.5rem)',
             fontWeight: 800,
             lineHeight: 1,
-            letterSpacing: '-0.02em',
             color: 'var(--text-primary)',
             margin: '0 0 0.4rem 0',
             animationDelay: '0.2s',
