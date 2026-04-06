@@ -6,9 +6,9 @@
 
 ## Core Technologies
 
-- **Language**: TypeScript 5.x
+- **Language**: TypeScript ~6.0.2
 - **UI Framework**: React 19
-- **Build Tool**: Vite 6.x
+- **Build Tool**: Vite ^8.0.4
 - **Styling**: Tailwind CSS v4（`@tailwindcss/vite` プラグイン経由）
 - **Hosting**: GitHub Pages（`docs/` ディレクトリを公開）
 
@@ -16,6 +16,34 @@
 
 - **@vitejs/plugin-react**: React の Fast Refresh と JSX 変換
 - **@tailwindcss/vite**: Tailwind CSS v4 の Vite プラグイン（PostCSS 設定不要）
+
+## Design System
+
+CSS カスタムプロパティを `src/index.css` で一元管理し、デザイントークンの単一ソース・オブ・トゥルースとする。
+
+### Visual Theme
+- ダークターミナル美学: 黒に近い背景（near-black）、アンバー `#ffb800` をアクセントカラーとして使用
+- グロウエフェクト（`text-shadow` / `box-shadow`）をアクセント要素に適用
+
+### Font Strategy
+| 用途 | フォント |
+|---|---|
+| Display | `Syne` |
+| Body | `DM Sans` |
+| Mono | `JetBrains Mono` |
+| 日本語 fallback | `Noto Sans JP` |
+
+### Reusable CSS Utility Classes
+コンポーネント間で共有する CSS クラスを `src/index.css` に定義する:
+
+- `.card` — カード型コンテナ
+- `.btn-ghost` — ゴーストボタン
+- `.tag` — タグ／バッジ
+- `.nav-link` — ナビゲーションリンク
+- `.section-number` — セクション番号装飾
+- `.timeline-line` / `.timeline-dot` — タイムラインレイアウト
+- `.dot-grid` — ドットグリッド背景パターン
+- `.scanline-overlay` — スキャンライン効果オーバーレイ
 
 ## Development Standards
 
