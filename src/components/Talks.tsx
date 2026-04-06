@@ -4,39 +4,85 @@ const Talks: React.FC = () => {
   const { talks } = portfolio;
 
   return (
-    <section id="talks" className="py-12 px-4">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">登壇</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
-            <thead>
-              <tr className="border-b border-gray-300">
-                <th className="text-left py-2 pr-4 font-semibold whitespace-nowrap">日付</th>
-                <th className="text-left py-2 pr-4 font-semibold">イベント</th>
-                <th className="text-left py-2 pr-4 font-semibold">タイトル</th>
-                <th className="text-left py-2 font-semibold whitespace-nowrap">資料</th>
-              </tr>
-            </thead>
-            <tbody>
-              {talks.map((talk, i) => (
-                <tr key={i} className="border-b border-gray-200">
-                  <td className="py-3 pr-4 whitespace-nowrap text-gray-600">{talk.date}</td>
-                  <td className="py-3 pr-4 text-gray-700">{talk.event}</td>
-                  <td className="py-3 pr-4 text-gray-700">{talk.title}</td>
-                  <td className="py-3">
-                    <a
-                      href={talk.slideUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline whitespace-nowrap"
-                    >
-                      資料
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <section id="talks" style={{ padding: '4rem 1.5rem', background: 'var(--bg-subtle)' }}>
+      <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
+
+        <div className="section-number">
+          <span>04 / TALKS</span>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {talks.map((talk, i) => (
+            <a
+              key={i}
+              href={talk.slideUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card"
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                gap: '1rem',
+                padding: '1rem 1.2rem',
+                textDecoration: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              {/* Date */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.08em',
+                  color: 'var(--accent)',
+                  flexShrink: 0,
+                  width: '5.5rem',
+                }}
+              >
+                {talk.date}
+              </span>
+
+              {/* Event + title */}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.65rem',
+                    letterSpacing: '0.08em',
+                    color: 'var(--text-muted)',
+                    marginBottom: '0.25rem',
+                  }}
+                >
+                  {talk.event}
+                </div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.875rem',
+                    color: 'var(--text-primary)',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {talk.title}
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <span
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.75rem',
+                  color: 'var(--accent)',
+                  flexShrink: 0,
+                  opacity: 0.6,
+                  transition: 'opacity 0.2s, transform 0.2s',
+                }}
+              >
+                →
+              </span>
+            </a>
+          ))}
         </div>
       </div>
     </section>

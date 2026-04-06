@@ -4,14 +4,56 @@ const Certifications: React.FC = () => {
   const { certifications } = portfolio;
 
   return (
-    <section id="certifications" className="py-12 px-4 bg-gray-50">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">資格</h2>
-        <ul className="list-disc list-inside space-y-2">
+    <section id="certifications" style={{ padding: '4rem 1.5rem' }}>
+      <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
+
+        <div className="section-number">
+          <span>03 / CERTIFICATIONS</span>
+        </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+            gap: '0.75rem',
+          }}
+        >
           {certifications.map((cert) => (
-            <li key={cert} className="text-gray-700">{cert}</li>
+            <div
+              key={cert}
+              className="card"
+              style={{
+                padding: '1.2rem 1rem',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '0.75rem',
+              }}
+            >
+              {/* Diamond icon */}
+              <span
+                style={{
+                  display: 'inline-block',
+                  width: '7px',
+                  height: '7px',
+                  border: '1px solid var(--accent)',
+                  flexShrink: 0,
+                  marginTop: '0.35rem',
+                  transform: 'rotate(45deg)',
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.82rem',
+                  color: 'var(--text-primary)',
+                  lineHeight: 1.5,
+                }}
+              >
+                {cert}
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
