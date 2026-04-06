@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        background: 'rgba(7, 8, 15, 0.92)',
+        background: 'rgba(248, 249, 252, 0.92)',
         backdropFilter: 'blur(12px)',
         borderBottom: '1px solid var(--border-accent)',
       }}

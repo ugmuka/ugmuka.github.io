@@ -8,7 +8,8 @@ const Experience: React.FC = () => {
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
         <div className="section-number">
-          <span>01 / EXPERIENCE</span>
+          <span className="section-prefix">01</span>
+          <h2 className="section-title">EXPERIENCE</h2>
         </div>
 
         {experiences.map((entry, i) => (
@@ -107,9 +108,9 @@ const Experience: React.FC = () => {
                     <span
                       style={{
                         fontFamily: 'var(--font-body)',
-                        fontSize: '0.875rem',
+                        fontSize: '1rem',
                         color: 'var(--text-primary)',
-                        lineHeight: 1.5,
+                        lineHeight: 1.7,
                       }}
                     >
                       {project}

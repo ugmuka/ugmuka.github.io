@@ -33,7 +33,7 @@ const Profile: React.FC = () => {
           left: '-10%',
           width: '600px',
           height: '600px',
-          background: 'radial-gradient(ellipse at center, rgba(255,184,0,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(184,134,11,0.06) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />

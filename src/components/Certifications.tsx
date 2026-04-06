@@ -8,7 +8,8 @@ const Certifications: React.FC = () => {
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
         <div className="section-number">
-          <span>03 / CERTIFICATIONS</span>
+          <span className="section-prefix">03</span>
+          <h2 className="section-title">CERTIFICATIONS</h2>
         </div>
 
         <div
@@ -44,9 +45,9 @@ const Certifications: React.FC = () => {
               <span
                 style={{
                   fontFamily: 'var(--font-body)',
-                  fontSize: '0.82rem',
+                  fontSize: '1rem',
                   color: 'var(--text-primary)',
-                  lineHeight: 1.5,
+                  lineHeight: 1.7,
                 }}
               >
                 {cert}

@@ -25,7 +25,7 @@
         }
     },
     "forwardPorts": [
-        8080
+        5173
     ],
     "mounts": [],
     "postCreateCommand": "make init",

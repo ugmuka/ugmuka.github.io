@@ -8,7 +8,8 @@ const Skills: React.FC = () => {
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
         <div className="section-number">
-          <span>02 / SKILLS</span>
+          <span className="section-prefix">02</span>
+          <h2 className="section-title">SKILLS</h2>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

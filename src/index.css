@@ -2,17 +2,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #07080f;
-  --bg-surface: #0d0f1a;
-  --bg-subtle: #12162b;
-  --text-primary: #e8eaf0;
-  --text-muted: #6b7280;
-  --accent: #ffb800;
-  --accent-dim: #cc9200;
-  --accent-glow: rgba(255, 184, 0, 0.15);
-  --accent-glow-strong: rgba(255, 184, 0, 0.3);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(255, 184, 0, 0.4);
+  --bg-primary: #f8f9fc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #eef0f7;
+  --text-primary: #1a1d2e;
+  --text-muted: #5c6374;
+  --accent: #b8860b;
+  --accent-dim: #9a7009;
+  --accent-glow: rgba(184, 134, 11, 0.12);
+  --accent-glow-strong: rgba(184, 134, 11, 0.25);
+  --border: rgba(0, 0, 0, 0.10);
+  --border-accent: rgba(184, 134, 11, 0.4);
   --font-display: 'Syne', 'Noto Sans JP', sans-serif;
   --font-body: 'DM Sans', 'Noto Sans JP', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -77,28 +77,32 @@ body {
 }
 
 .section-number {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  color: var(--accent);
-  text-transform: uppercase;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
 }
 
-.section-number::after {
-  content: '';
-  flex: 1;
-  max-width: 3rem;
-  height: 1px;
-  background: var(--border-accent);
+.section-prefix {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
+  letter-spacing: 0.02em;
   padding: 0.25rem 0.65rem;
   border: 1px solid var(--border);
   color: var(--text-muted);
@@ -113,7 +117,7 @@ body {
 
 /* ─── Dot grid background ─── */
 .dot-grid {
-  background-image: radial-gradient(circle, rgba(255,184,0,0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(184,134,11,0.10) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -125,7 +129,7 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(transparent, rgba(255,184,0,0.08), transparent);
+  background: linear-gradient(transparent, rgba(184,134,11,0.06), transparent);
   animation: scanline 6s linear infinite;
   pointer-events: none;
 }

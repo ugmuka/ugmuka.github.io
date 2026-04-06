@@ -8,7 +8,8 @@ const Talks: React.FC = () => {
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
         <div className="section-number">
-          <span>04 / TALKS</span>
+          <span className="section-prefix">04</span>
+          <h2 className="section-title">TALKS</h2>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -59,9 +60,9 @@ const Talks: React.FC = () => {
                 <div
                   style={{
                     fontFamily: 'var(--font-body)',
-                    fontSize: '0.875rem',
+                    fontSize: '1rem',
                     color: 'var(--text-primary)',
-                    lineHeight: 1.4,
+                    lineHeight: 1.5,
                   }}
                 >
                   {talk.title}

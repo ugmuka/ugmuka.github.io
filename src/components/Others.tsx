@@ -8,7 +8,8 @@ const Others: React.FC = () => {
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
         <div className="section-number">
-          <span>05 / OTHERS</span>
+          <span className="section-prefix">05</span>
+          <h2 className="section-title">OTHERS</h2>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -17,7 +18,7 @@ const Others: React.FC = () => {
               <p
                 style={{
                   fontFamily: 'var(--font-body)',
-                  fontSize: '0.875rem',
+                  fontSize: '1rem',
                   color: 'var(--text-primary)',
                   lineHeight: 1.7,
                   margin: 0,
@@ -41,7 +42,7 @@ const Others: React.FC = () => {
                             borderBottom: '1px solid var(--border-accent)',
                             transition: 'color 0.2s',
                           }}
-                          onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
                           onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--accent)')}
                         >
                           {link.label}
