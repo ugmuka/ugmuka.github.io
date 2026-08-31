@@ -40,6 +40,17 @@ npm run lint      # ESLint チェック
 
 テストのセットアップはなし（lint のみ）。
 
+## pre-commit フック
+
+`.pre-commit-config.yaml` で JSON の自動整形（`pretty-format-json`、2 スペース / キー順保持）と構文チェック（`check-json`）を実行します。
+
+```bash
+uv tool install pre-commit && uv tool run pre-commit install   # 初回セットアップ（make init に同梱）
+pre-commit run --all-files                                     # 全ファイルに手動適用
+```
+
+除外対象: `package-lock.json`（npm 管理）、`.devcontainer/devcontainer.json` / `tsconfig.app.json` / `tsconfig.node.json`（コメント付き JSONC のため）、`docs/`（ビルド成果物）。
+
 ## TypeScript 設定
 
 `tsconfig.app.json` で `noUnusedLocals` / `noUnusedParameters` が有効。未使用の変数・パラメータはビルドエラーになる。
