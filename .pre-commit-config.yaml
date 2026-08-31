@@ -1,0 +1,17 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      # JSON を 2 スペースインデントで自動整形し、キーをソートする（name は先頭に固定）
+      - id: pretty-format-json
+        args: [--autofix, --indent=2, --top-keys=name, --no-ensure-ascii]
+        exclude: &json_exclude |
+          (?x)^(
+            package-lock\.json|
+            tsconfig\.app\.json|
+            tsconfig\.node\.json|
+            docs/.*
+          )$
+      # 構文エラーのある JSON をコミット前に弾く
+      - id: check-json
+        exclude: *json_exclude

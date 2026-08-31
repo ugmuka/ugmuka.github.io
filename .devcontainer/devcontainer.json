@@ -1,5 +1,5 @@
 {
-    "name": "dbt Development Environment",
+    "name": "Development Environment",
     "build": {
         "dockerfile": "Dockerfile"
     },
@@ -9,12 +9,12 @@
         "ghcr.io/devcontainers/features/node:1": {
             "version": "lts"
         },
-        "ghcr.io/devcontainers/features/docker-in-docker:2"
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
     "customizations": {
         "vscode": {
             "extensions": [
-                "Anthropic.claude-code",
+                "anthropic.claude-code",
                 "EditorConfig.EditorConfig",
                 "eamodio.gitlens"
             ],
