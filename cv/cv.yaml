@@ -104,10 +104,31 @@ cv:
         start_date: 2024-07
         end_date: 2024-12
         location: 役割：Snowflake基盤担当チームリード / チーム4名
+        summary: >-
+          SAP HANA の EOS に伴い、経理部門が決算業務に利用する BI 基盤を Snowflake へ移行した。
+        highlights:
+          - >-
+            **担当**:
+            Snowflake 基盤担当チーム（4名）のリードとして、基盤・データモデルの設計 /
+            経理部門および他チームとの要件調整 /
+            dbt モデルを含む全体コードレビュー
+          - '**技術**: Snowflake, dbt platform, Terraform, SAP HANA'
       - name: 不動産事業における事業間横断顧客分析基盤の構築
         start_date: 2024-05
         end_date: 2025-03
         location: 役割：Snowflake基盤担当チームリード / チーム4名
+        summary: >-
+          不動産ホールディングス傘下の複数企業からデータを集約し、サービス横断で顧客を分析する基盤を新規構築した。
+        highlights:
+          - >-
+            **担当**:
+            Snowflake 基盤担当チーム（4名）の全体リード /
+            SQL Server・MySQL・PostgreSQL・Salesforce など多様な連携元からのデータ取り込み設計 /
+            複数企業にまたがるステークホルダーとの要件調整
+          - >-
+            **成果**:
+            グループ各社で異なるシステム・データ構造を統合し、サービス横断の顧客分析を可能にする基盤をリリースした。
+          - '**技術**: Snowflake, dbt, Airflow, Terraform, SQL Server, MySQL, PostgreSQL, Salesforce'
       - name: ECサイトの全社向け顧客分析基盤の移行刷新
         start_date: 2023-04
         end_date: 2024-12
