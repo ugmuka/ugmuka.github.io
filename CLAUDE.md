@@ -13,6 +13,7 @@ GitHub Pages でホスティングされる個人ポートフォリオサイト�
 - **コンポーネント**: `src/components/` — セクション別（Header, Profile, Experience, Skills, Certifications, Talks, Others）、`src/App.tsx` が順に並べる
 - **スタイリング**: Tailwind CSS v4（`@tailwindcss/vite` プラグイン経由、PostCSS 設定不要）+ `src/index.css` のカスタムデザインシステム
 - **デプロイ**: GitHub Pages が `docs/` ディレクトリの静的ファイルを配信
+- **経歴書**: `cv/cv.yaml`（[RenderCV](https://rendercv.com/) 形式、手書き管理・サイトとは独立）→ `make cv` で `cv/rendercv_output/` に PDF 生成。日本語フォント（Noto Sans JP）は `cv/fonts/` に自動ダウンロード（コミットしない）
 
 ## デザインシステム
 
@@ -36,6 +37,7 @@ npm run dev       # Vite 開発サーバー → http://localhost:5173
 npm run build     # TypeScript チェック + docs/ にビルド出力
 npm run preview   # ビルド済みサイトを Vite でプレビュー
 npm run lint      # ESLint チェック
+make cv           # RenderCV で経歴書 PDF を生成（uv 必須）
 ```
 
 テストのセットアップはなし（lint のみ）。
