@@ -1,0 +1,166 @@
+# 職務経歴書（CV）
+# src/data/portfolio.ts の内容をベースに、職務経歴の詳細を追記していく
+
+profile:
+  name: 向井雄二
+  role: Data Engineer
+  email: ugmuka1@gmail.com
+
+experiences:
+  - company: DATUM STUDIO（株）
+    role: データエンジニア
+    period:
+      start: 2020-04-01
+      end: null # 現在
+    projects:
+      - name: スポーツクラブ向けの顧客分析基盤の構築
+        description: >-
+          スポーツクラブ向けの顧客データ分析基盤を構築した。
+          エクセルベースでの分析からTableauでの分析、定常KPIを表示するダッシュボードへと移行。
+        responsibilities:
+          - AWS S3上でのデータレイク構築
+          - AWS Glue(Spark)を用いた大規模データの分散処理
+          - Snowflakeを用いたDWH構築(テーブル設計, 運用, SQLでのETL構築)
+          - 上記インフラのTerraformでのIaC化
+          - GitHub ActionsでのCI/CDの構築
+          - Tableauで表示するためのデータマート設計
+        achievements:
+          - 日本でまだ導入事例が少ないDWHであるSnowflakeについて技術検証、導入を行い、分析基盤の大幅な高速化に貢献。
+          - 導入事例をユーザー会で紹介する等、外部への発信も積極的に行った。
+        tech_stack: [AWS S3, AWS Glue, Spark, Snowflake, Terraform, GitHub Actions, Tableau]
+      - name: 動画プラットフォームにおける視聴ログ分析基盤の構築
+        description: >-
+          動画プラットフォームにおいて、視聴ログなどを一括管理するデータ分析基盤の構築を支援。
+          また、視聴ログ分析から動画の改善を提案するため、KPIダッシュボードを構築した。
+        responsibilities:
+          - SFTPサーバー上でのデータレイク構築
+          - Python
+          - BigQueryを用いたDWH構築(テーブル設計, 運用, SQLでのETL構築)
+          - データマート設計
+        achievements:
+          - バック、フロントチームと協業しながら要件を満たすテーブル設計を行う。
+        tech_stack: [SFTP, Python, BigQuery]
+      - name: テレビ局向け広告配信用基盤構築
+        description: >-
+          クライアントの広告配信事業における広告配信用の顧客データ基盤を構築した。
+          プロパーとして、前後システムのベンダーと共に要件定義や開発作業の牽引を行った。
+        responsibilities:
+          - Snowflakeを用いたデータ基盤のインフラ設計、および構築
+          - テーブル設計
+          - 上記インフラのTerraformでのIaC化
+          - 要件定義全般
+        achievements:
+          - 複数ベンダーとの協業であったため、IFなどの要件定義やテスト仕様の調整に注力した。
+          - 開発フェーズにおいてはレビューを主に行い、社内での人材育成に貢献した。
+        tech_stack: [Snowflake, Terraform]
+      - name: ECサイトの全社向け顧客分析基盤の移行刷新
+        role: ETL処理チーム プロジェクトリード
+        description: >-
+          ECサイト向けの大規模データ基盤を構築。
+          Oracleでの分析基盤からSnowflakeへの移行を行なっている。
+        responsibilities:
+          - データモデリング検討
+          - 新規ダッシュボード要件定義
+          - Airflowによるワークフロー構築
+          - dbtによるデータ変換設計
+          - テスト設計
+          - その他保守運用
+        achievements:
+          - ETL処理チームのプロジェクトリードを担当、レガシー化した旧基盤からのデータ移行に貢献。
+          - dbt+Airflowによるバッチ処理を構築し、ETL処理の開発効率化を行なっている。
+        tech_stack: [Oracle, Snowflake, Airflow, dbt]
+      - name: 不動産事業における事業間横断顧客分析基盤の構築
+      - name: 決算業務に用いる経理BIの移行刷新
+      - name: 自動車センサーデータ集積基盤の移行刷新
+        role: プロジェクトマネージャー（社内PM）
+        team_size: 5
+        team: >-
+          移行チーム3名およびAPI開発2名、計5名の小規模チームの中で社内PMを務め、
+          全体で約20名規模の複数チームが協働する体制内でリードとしての役割を果たしました。
+        description: >-
+          オンプレミスのNASおよびSQL Server廃止に伴う車載器センサー分析システムの
+          AWSとSnowflakeへのクラウド移行を推進しました。
+        responsibilities:
+          - プロジェクトマネージャーとして、複数ベンダーが協業する環境下で社内でのPMを担当し、移行チームおよびAPI開発チームのとりまとめを実施しました。
+          - ウォーターフォール開発手法に基づき、スコープ管理、品質管理、リスク管理を主導し、プロジェクトの円滑な推進を支援しました。
+          - 移行プロセスにおける課題解決策の提案・実行に携わり、技術的な調整および顧客折衝を行いました。
+        background:
+          - 約60TBに及ぶファイル群をクラウドへ移行する際、データ構造の見直しに伴いCSVファイルをJSON形式に変換しなければならず、数十億ファイル規模の変換処理がパフォーマンス上の大きなボトルネックとなっていました。
+          - 移行作業の遅延がシステム全体の稼働開始に影響を及ぼすリスクがあり、効率的かつ確実な移行方法の確立が求められました。
+        approach:
+          environment:
+            - AWSおよびSnowflakeを利用し、基盤のクラウド化を推進しました。
+            - Pythonを用いてデータ変換および移行処理の一部を自動化し、効率化を図りました。
+            - ウォーターフォール開発手法により、計画的な進捗管理と品質管理を徹底しました。
+          design:
+            - 顧客と密に連携し、未使用のHadoopサーバ10台を調達して並列処理環境を構築し、CSVからJSONへの変換および圧縮処理を分散実行する仕組みを設計・実装しました。
+            - 並列処理による変換処理の高速化により、ファイル変換のボトルネックを大幅に解消し、移行期間の短縮に寄与しました。
+            - 移行に伴いデータ構造の見直しを実施し、Snowflakeの特性を活かした効率的なデータ設計を提案・実行しました。
+            - API開発チームとの連携を強化し、移行後のシステム連携に必要なインターフェース仕様の調整と検証を行いました。
+          other:
+            - 移行作業のリスクを低減するため、詳細な進捗報告と課題管理の仕組みを導入し、ステークホルダー間の透明性を確保しました。
+            - 運用・保守フェーズに向けたドキュメント整備とナレッジ共有を推進し、移行後の安定稼働を支援しました。
+        achievements:
+          - オンプレミスサーバの廃止によりインフラコストの削減に寄与しました。
+          - Snowflakeへの移行に伴い処理速度が20%改善されました。
+          - データ構造の見直しとクラウド基盤の活用により、運用負荷が低減し、保守性の向上に寄与しました。
+        tech_stack: [AWS, Snowflake, Python, Hadoop, SQL Server, NAS]
+      - name: 大手小売業界分析基盤の移行刷新
+        role: Snowflake基盤担当チームリード
+        team_size: 8
+        team: >-
+          エンジニア8名のSnowflake基盤担当チームをリードし、
+          プロジェクト全体では他領域を含む合計約30名規模のチームで構成されていました。
+          チームはウォーターフォール開発手法に則り、各フェーズを厳格に管理しながら開発を進めました。
+        description: >-
+          並列して2システムのリプレースを行いました。
+          大手小売業界向けの分析基盤移行刷新プロジェクトにおいて、
+          Snowflake基盤の要件定義から設計、コーディング、テストを統括しました。
+        responsibilities:
+          - エンジニア8名のチームリードを担当し、進捗管理と要件調整行い、他領域のリードと密に連携しました。
+          - dbt導入に伴うテーブル定義の設計レビューや品質管理を実施し、コードの品質向上とパフォーマンス最適化に注力しました。
+        background:
+          - 現行の分析基盤の設計書が最新状態に更新されておらず、実機ベースの設計検証が必須となっていました。
+          - データ量が1000億行以上に及ぶ大規模なデータ移行を実施するため、移行後の検証と並行してパフォーマンス改善策の検討が必要でした。
+          - 移行刷新による投資効果の最大化を図るため、運用コスト削減とシステムの安定稼働確保が重要な課題でした。
+        approach:
+          environment:
+            - Snowflakeをデータウェアハウスとして採用し、dbtを用いたテーブル設計・管理を実施しました。
+            - バッチ実行にSystemWalker（Azure上ホスト）を活用し、CICDを構築しました。
+            - 開発プロセスはウォーターフォールで進行し、設計、実装、テストの各フェーズでレビューを重ねて品質を担保しました。
+          design:
+            - dbt導入に伴うテーブル定義や変換ロジックの設計全般をレビューし、パフォーマンス最適化と保守性向上を推進しました。
+            - 現行システムの仕様変更に追随するため、現行開発ベンダーから定期的にコード断面を提供いただき、差分を抽出・分析しました。
+            - Claude Codeを活用して既存コードの自動解析を行い、検証用スクリプトの自動化により移行検証の効率化を図りました。
+            - 移行後のパフォーマンス問題を早期に発見するため、実機上での検証作業と並行して改善施策を立案・実施しました。
+          other:
+            - 複数システムの統合による運用費削減を目指し、基盤の合理化と自動化を推進しました。
+            - プロジェクト全体の進捗と課題を可視化するため、定期的なレビューとリスク管理を徹底しました。
+        achievements:
+          - 複数システム統合による運用費の約30%削減を見込み、コスト効率の大幅な改善に寄与しました（未リリース）。
+          - 大規模データ移行におけるパフォーマンス問題を早期に検知し、安定稼働に向けた基盤設計の改善を実現しました。
+          - ウォーターフォール開発手法に基づく厳密な工程管理により、プロジェクトの進捗管理と品質確保を両立しました。
+        tech_stack: [Snowflake, dbt, SystemWalker, Azure, Claude Code]
+
+skills:
+  - category: Language
+    items: [Python, SQL, PHP, TypeScript]
+  - category: Application Framework
+    items: [Laravel, React]
+  - category: Cloud
+    items: [AWS, GCP, Snowflake]
+  - category: Infrastructure Tools
+    items: [Terraform]
+  - category: Data Engineering Tools
+    items: [dbt(core/cloud), Airflow, Spark]
+  - category: BI Tools
+    items: [Looker, PowerBI]
+  - category: Others
+    items: [GitHub Actions]
+
+certifications:
+  - 応用情報技術者
+  - AWS Solution Architect Professional
+  - AWS Data Analytics Specialty
+  - GCP Professional Data Engineer
+  - SnowPro Advanced Architect
