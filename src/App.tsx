@@ -4,13 +4,25 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Talks from './components/Talks';
+import Publications from './components/Publications';
 import Others from './components/Others';
 
 const App: React.FC = () => {
   return (
     <div className="overflow-x-hidden max-w-full" style={{ background: 'var(--bg-primary)' }}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:border"
+        style={{
+          background: 'var(--bg-surface)',
+          color: 'var(--accent)',
+          borderColor: 'var(--border-accent)',
+        }}
+      >
+        本文へスキップ
+      </a>
       <Header />
-      <main>
+      <main id="main-content">
         <Profile />
         <div className="section-divider" />
         <Experience />
@@ -20,6 +32,8 @@ const App: React.FC = () => {
         <Certifications />
         <div className="section-divider" />
         <Talks />
+        <div className="section-divider" />
+        <Publications />
         <div className="section-divider" />
         <Others />
       </main>

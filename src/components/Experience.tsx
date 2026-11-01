@@ -7,10 +7,7 @@ const Experience: React.FC = () => {
     <section id="experience" style={{ padding: '4rem 1.5rem' }}>
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
-        <div className="section-number">
-          <span className="section-prefix">01</span>
-          <h2 className="section-title">EXPERIENCE</h2>
-        </div>
+        <h2 className="section-title">Experience</h2>
 
         {experiences.map((entry, i) => (
           <div key={i} style={{ display: 'flex', gap: '2rem' }}>

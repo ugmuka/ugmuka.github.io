@@ -31,7 +31,7 @@ const Others: React.FC = () => {
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
         <div className="section-number">
-          <span className="section-prefix">05</span>
+          <span className="section-prefix">06</span>
           <h2 className="section-title">OTHERS</h2>
         </div>
 
