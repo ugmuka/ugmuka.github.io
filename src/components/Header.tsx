@@ -62,7 +62,7 @@ const Header: React.FC = () => {
         <button
           className="sm:hidden p-2"
           style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
-          aria-label="メニューを開く"
+          aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((prev) => !prev)}
         >

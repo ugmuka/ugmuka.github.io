@@ -36,14 +36,7 @@ const Others: React.FC = () => {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{
-                            color: 'var(--accent)',
-                            textDecoration: 'none',
-                            borderBottom: '1px solid var(--border-accent)',
-                            transition: 'color 0.2s',
-                          }}
-                          onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
-                          onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--accent)')}
+                          className="link-inline-accent"
                         >
                           {link.label}
                         </a>

@@ -110,16 +110,12 @@ const Profile: React.FC = () => {
         >
           <a
             href={`mailto:${profile.email}`}
+            className="link-muted"
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: '0.75rem',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
               letterSpacing: '0.05em',
-              transition: 'color 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
           >
             {profile.email}
           </a>
