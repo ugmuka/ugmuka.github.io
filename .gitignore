@@ -5,3 +5,4 @@ nohup.out
 node_modules/
 cv/fonts/
 cv/rendercv_output/
+.claude/worktrees/
