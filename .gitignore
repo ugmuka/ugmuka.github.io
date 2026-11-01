@@ -3,3 +3,5 @@
 nohup.out
 .venv
 node_modules/
+cv/fonts/
+cv/rendercv_output/

@@ -59,12 +59,14 @@ CSS カスタムプロパティを `src/index.css` で一元管理し、デザ�
 ### Required Tools
 - `node` / `npm`（Node.js LTS）
 - `http-server`（ローカルプレビュー用）
+- `uv`（経歴書生成用 Python 環境。`pyproject.toml` で RenderCV を管理）
 
 ### Common Commands
 ```bash
 # Dev:   npm run dev  → http://localhost:5173
 # Build: npm run build  → docs/ に出力
 # Preview built site: npx http-server  → http://127.0.0.1:8080/docs
+# CV PDF: make cv  → cv/rendercv_output/（RenderCV、cv/cv.yaml を手書き管理）
 ```
 
 ## Key Technical Decisions
