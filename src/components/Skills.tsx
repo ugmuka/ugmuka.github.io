@@ -7,10 +7,7 @@ const Skills: React.FC = () => {
     <section id="skills" style={{ padding: '4rem 1.5rem', background: 'var(--bg-subtle)' }}>
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
-        <div className="section-number">
-          <span className="section-prefix">02</span>
-          <h2 className="section-title">SKILLS</h2>
-        </div>
+        <h2 className="section-title">Skills</h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {skills.map((category) => (

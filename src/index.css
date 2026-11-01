@@ -250,17 +250,6 @@ body {
 }
 
 /* ─── Inline text links ─── */
-.link-muted {
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.link-muted:hover,
-.link-muted:focus-visible {
-  color: var(--accent);
-}
-
 .link-inline-accent {
   color: var(--accent);
   text-decoration: none;
@@ -277,11 +266,12 @@ body {
 .field-list {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  line-height: 2.1;
+  line-height: 1.6;
   margin: 0;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0 0.9rem;
+  gap: 0.5rem 0.9rem;
+  align-items: baseline;
 }
 
 .field-list dt {

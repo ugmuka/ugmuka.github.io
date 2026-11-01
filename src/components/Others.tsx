@@ -30,14 +30,11 @@ const Others: React.FC = () => {
     <section id="others" style={{ padding: '4rem 1.5rem' }}>
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
-        <div className="section-number">
-          <span className="section-prefix">05</span>
-          <h2 className="section-title">OTHERS</h2>
-        </div>
+        <h2 className="section-title">Others</h2>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {otherActivities.map((activity, i) => (
-            <div key={i} className="card" style={{ padding: '1.2rem 1.2rem' }}>
+            <div key={i} className="note-block">
               <p
                 style={{
                   fontFamily: 'var(--font-body)',
