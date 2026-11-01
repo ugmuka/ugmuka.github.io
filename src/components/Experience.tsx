@@ -7,10 +7,7 @@ const Experience: React.FC = () => {
     <section id="experience" style={{ padding: '4rem 1.5rem' }}>
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
-        <div className="section-number">
-          <span className="section-prefix">01</span>
-          <h2 className="section-title">EXPERIENCE</h2>
-        </div>
+        <h2 className="section-title">Experience</h2>
 
         {experiences.map((entry, i) => (
           <div key={i} style={{ display: 'flex', gap: '2rem' }}>
@@ -105,16 +102,62 @@ const Experience: React.FC = () => {
                     >
                       {String(j + 1).padStart(2, '0')}
                     </span>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-body)',
-                        fontSize: '1rem',
-                        color: 'var(--text-primary)',
-                        lineHeight: 1.7,
-                      }}
-                    >
-                      {project}
-                    </span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexWrap: 'wrap',
+                          alignItems: 'baseline',
+                          gap: '0.6rem',
+                          marginBottom: '0.3rem',
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontFamily: 'var(--font-body)',
+                            fontSize: '1rem',
+                            fontWeight: 700,
+                            color: 'var(--text-primary)',
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {project.title}
+                        </span>
+                        <span
+                          style={{
+                            fontFamily: 'var(--font-mono)',
+                            fontSize: '0.6rem',
+                            letterSpacing: '0.08em',
+                            color: 'var(--accent)',
+                            flexShrink: 0,
+                          }}
+                        >
+                          {project.period}
+                        </span>
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.65rem',
+                          letterSpacing: '0.06em',
+                          color: 'var(--text-muted)',
+                          marginBottom: '0.4rem',
+                        }}
+                      >
+                        {project.role}
+                      </div>
+                      <p
+                        style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '0.9rem',
+                          color: 'var(--text-muted)',
+                          lineHeight: 1.7,
+                          margin: 0,
+                        }}
+                      >
+                        {project.summary}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>

@@ -1,4 +1,27 @@
-import portfolio from '../data/portfolio';
+import portfolio, { type ActivityLink } from '../data/portfolio';
+
+function renderDescriptionWithLinks(text: string, links: ActivityLink[]): React.ReactNode[] {
+  const matches = links
+    .map((link) => ({ link, idx: text.indexOf(link.label) }))
+    .filter((match) => match.idx !== -1)
+    .sort((a, b) => a.idx - b.idx);
+
+  const parts: React.ReactNode[] = [];
+  let cursor = 0;
+  matches.forEach(({ link, idx }) => {
+    if (idx < cursor) return;
+    parts.push(text.slice(cursor, idx));
+    parts.push(
+      <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="link-inline-accent">
+        {link.label}
+      </a>
+    );
+    cursor = idx + link.label.length;
+  });
+  parts.push(text.slice(cursor));
+
+  return parts;
+}
 
 const Others: React.FC = () => {
   const { otherActivities } = portfolio;
@@ -24,30 +47,7 @@ const Others: React.FC = () => {
                   margin: 0,
                 }}
               >
-                {activity.links.reduce<React.ReactNode[]>((parts, link, j) => {
-                  const text = activity.description;
-                  if (j === 0) {
-                    const idx = text.indexOf(link.label);
-                    if (idx !== -1) {
-                      parts.push(text.slice(0, idx));
-                      parts.push(
-                        <a
-                          key={link.label}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="link-inline-accent"
-                        >
-                          {link.label}
-                        </a>
-                      );
-                      parts.push(text.slice(idx + link.label.length));
-                    } else {
-                      parts.push(text);
-                    }
-                  }
-                  return parts;
-                }, [])}
+                {renderDescriptionWithLinks(activity.description, activity.links)}
               </p>
             </div>
           ))}

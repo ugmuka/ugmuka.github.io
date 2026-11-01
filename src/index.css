@@ -76,27 +76,14 @@ body {
   opacity: 0;
 }
 
-.section-number {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2.5rem;
-}
-
-.section-prefix {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: var(--accent);
-  margin-bottom: 0.25rem;
-}
-
 .section-title {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0;
-  letter-spacing: 0.02em;
+  margin: 0 0 2.25rem 0;
+  letter-spacing: 0.01em;
+  scroll-margin-top: 5rem;
 }
 
 .tag {
@@ -284,6 +271,100 @@ body {
 .link-inline-accent:hover,
 .link-inline-accent:focus-visible {
   color: var(--text-primary);
+}
+
+/* ─── Hero field list (schema-record motif) ─── */
+.field-list {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 2.1;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 0.9rem;
+}
+
+.field-list dt {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.field-list dt::before {
+  content: '├─ ';
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.field-list dt:last-of-type::before {
+  content: '└─ ';
+}
+
+.field-list dd {
+  margin: 0;
+  color: var(--text-primary);
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.field-list dd a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-accent);
+  transition: color 0.2s ease;
+}
+
+.field-list dd a:hover,
+.field-list dd a:focus-visible {
+  color: var(--accent);
+}
+
+/* ─── Manifest row (Experience project list) ─── */
+.manifest-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.2s ease, border-color 0.2s ease;
+}
+
+.manifest-row:last-child {
+  border-bottom: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .manifest-row:hover {
+    padding-left: 0.5rem;
+    border-color: var(--border-accent);
+  }
+}
+
+.manifest-row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ─── Credential chip (Certifications) ─── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chip:hover {
+    border-color: var(--border-accent);
+  }
+}
+
+/* ─── Note block (Others) ─── */
+.note-block {
+  padding: 0 0 0 1.1rem;
+  border-left: 2px solid var(--border-accent);
 }
 
 /* ─── Motion safety ─── */

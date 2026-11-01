@@ -103,6 +103,34 @@ const Profile: React.FC = () => {
           }}
         />
 
+        {/* Summary */}
+        <div
+          className="animate-fade-up"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.6rem',
+            maxWidth: '42rem',
+            marginBottom: '2rem',
+            animationDelay: '0.37s',
+          }}
+        >
+          {profile.summary.map((paragraph, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '1rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
         {/* Email */}
         <div
           className="animate-fade-up"
