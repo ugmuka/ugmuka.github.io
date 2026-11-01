@@ -103,6 +103,34 @@ const Profile: React.FC = () => {
           }}
         />
 
+        {/* Summary */}
+        <div
+          className="animate-fade-up"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.6rem',
+            maxWidth: '42rem',
+            marginBottom: '2rem',
+            animationDelay: '0.37s',
+          }}
+        >
+          {profile.summary.map((paragraph, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '1rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
         {/* Email */}
         <div
           className="animate-fade-up"
@@ -110,16 +138,12 @@ const Profile: React.FC = () => {
         >
           <a
             href={`mailto:${profile.email}`}
+            className="link-muted"
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: '0.75rem',
-              color: 'var(--text-muted)',
-              textDecoration: 'none',
               letterSpacing: '0.05em',
-              transition: 'color 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
           >
             {profile.email}
           </a>
