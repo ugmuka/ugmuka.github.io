@@ -129,6 +129,8 @@ cv:
           - 2022/08 dbt Tokyo meetup「rawSQLからdbtへの移行プロセスについて」 [Slides](https://speakerdeck.com/ugmuka/rawsqlkaradbthefalseyi-xing-purosesunituite)
       - name: 技術記事の執筆
         summary: 'データ基盤・Snowflake・dbt を中心に [Qiita](https://qiita.com/ugmuka) 5 件 / [Zenn](https://zenn.dev/ugmuka) 8 件を執筆。'
+      - name: 技術書典21 出展
+        summary: 'サークル「RONNABYTE・ちゅらデータ技術書典支部」として出展。 [「dbtとそれにまつわる技術について語ろうじゃないか」](https://techbookfest.org/product/r35huDmDSWBjvqU6uYwENZ) を頒布。'
       - name: 資格
         summary: 応用情報技術者 / AWS Solution Architect Professional / AWS Data Analytics Specialty / GCP Professional Data Engineer / SnowPro Advanced Architect
       - name: 個人開発

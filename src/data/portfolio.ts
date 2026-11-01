@@ -200,6 +200,15 @@ const portfolio: PortfolioData = {
       ],
     },
     {
+      description: '技術書典21にサークル「RONNABYTE・ちゅらデータ技術書典支部」として出展。「dbtとそれにまつわる技術について語ろうじゃないか」を頒布。',
+      links: [
+        {
+          label: 'dbtとそれにまつわる技術について語ろうじゃないか',
+          url: 'https://techbookfest.org/product/r35huDmDSWBjvqU6uYwENZ',
+        },
+      ],
+    },
+    {
       description: '知人のプロダクトActiceの開発を支援。マイクロサービスの一つを担当し、フロントをReact、バックエンドをLaravelで実装した。',
       links: [{ label: 'Actice', url: 'https://actice.page/' }],
     },
