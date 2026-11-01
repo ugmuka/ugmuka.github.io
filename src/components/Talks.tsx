@@ -7,10 +7,7 @@ const Talks: React.FC = () => {
     <section id="talks" style={{ padding: '4rem 1.5rem', background: 'var(--bg-subtle)' }}>
       <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
 
-        <div className="section-number">
-          <span className="section-prefix">04</span>
-          <h2 className="section-title">TALKS</h2>
-        </div>
+        <h2 className="section-title">Talks</h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {talks.map((talk, i) => (
@@ -34,7 +31,7 @@ const Talks: React.FC = () => {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.65rem',
+                  fontSize: '0.72rem',
                   letterSpacing: '0.08em',
                   color: 'var(--accent)',
                   flexShrink: 0,
@@ -49,8 +46,8 @@ const Talks: React.FC = () => {
                 <div
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.08em',
+                    fontSize: '0.75rem',
+                    letterSpacing: '0.04em',
                     color: 'var(--text-muted)',
                     marginBottom: '0.25rem',
                   }}
@@ -68,20 +65,6 @@ const Talks: React.FC = () => {
                   {talk.title}
                 </div>
               </div>
-
-              {/* Arrow */}
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.75rem',
-                  color: 'var(--accent)',
-                  flexShrink: 0,
-                  opacity: 0.6,
-                  transition: 'opacity 0.2s, transform 0.2s',
-                }}
-              >
-                →
-              </span>
             </a>
           ))}
         </div>

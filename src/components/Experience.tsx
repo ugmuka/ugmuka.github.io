@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.65rem',
+                    fontSize: '0.72rem',
                     letterSpacing: '0.1em',
                     color: 'var(--accent)',
                     background: 'var(--accent-glow)',
@@ -52,7 +52,7 @@ const Experience: React.FC = () => {
               <p
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.75rem',
+                  fontSize: '0.8rem',
                   color: 'var(--text-muted)',
                   letterSpacing: '0.06em',
                   marginBottom: '1.5rem',
@@ -61,41 +61,16 @@ const Experience: React.FC = () => {
                 {entry.role}
               </p>
 
-              {/* Projects header */}
-              <div
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.15em',
-                  color: 'var(--text-muted)',
-                  marginBottom: '0.75rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                }}
-              >
-                <span style={{ color: 'var(--accent)' }}>▸</span> PROJECTS
-              </div>
-
               {/* Project list */}
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {entry.projects.map((project, j) => (
-                  <li
-                    key={j}
-                    className="card"
-                    style={{
-                      padding: '0.7rem 1rem',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '0.7rem',
-                    }}
-                  >
+                  <li key={j} className="manifest-row">
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '0.6rem',
+                        fontSize: '0.72rem',
                         color: 'var(--accent)',
-                        opacity: 0.5,
+                        opacity: 0.65,
                         flexShrink: 0,
                         marginTop: '0.15rem',
                       }}
@@ -126,7 +101,7 @@ const Experience: React.FC = () => {
                         <span
                           style={{
                             fontFamily: 'var(--font-mono)',
-                            fontSize: '0.6rem',
+                            fontSize: '0.7rem',
                             letterSpacing: '0.08em',
                             color: 'var(--accent)',
                             flexShrink: 0,
@@ -138,8 +113,8 @@ const Experience: React.FC = () => {
                       <div
                         style={{
                           fontFamily: 'var(--font-mono)',
-                          fontSize: '0.65rem',
-                          letterSpacing: '0.06em',
+                          fontSize: '0.78rem',
+                          letterSpacing: '0.04em',
                           color: 'var(--text-muted)',
                           marginBottom: '0.4rem',
                         }}

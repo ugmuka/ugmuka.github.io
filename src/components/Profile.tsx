@@ -1,7 +1,13 @@
 import portfolio from '../data/portfolio';
 
 const Profile: React.FC = () => {
-  const { profile } = portfolio;
+  const { profile, experiences, skills, certifications } = portfolio;
+  // 本業 = 在籍開始日が最も古い会社（兼業・業務委託より優先してHeroに表示する）
+  const primaryRole = experiences.reduce((earliest, entry) =>
+    entry.period.split('〜')[0] < earliest.period.split('〜')[0] ? entry : earliest
+  );
+  const stack = skills.find((s) => s.category.startsWith('Cloud'))?.items.join(' / ');
+  const since = primaryRole.period.split('〜')[0];
 
   return (
     <section
@@ -38,134 +44,108 @@ const Profile: React.FC = () => {
         }}
       />
 
-      <div style={{ maxWidth: '56rem', margin: '0 auto', width: '100%', position: 'relative', zIndex: 1 }}>
-
-        {/* Role label */}
+      <div style={{ maxWidth: '64rem', margin: '0 auto', width: '100%', position: 'relative', zIndex: 1 }}>
         <div
-          className="animate-fade-up"
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.7rem',
-            letterSpacing: '0.2em',
-            color: 'var(--accent)',
-            marginBottom: '1.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.6rem',
-            animationDelay: '0.1s',
-          }}
+          className="animate-fade-in"
+          style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'flex-start' }}
         >
-          <span style={{ color: 'var(--accent)', opacity: 0.6 }}>▸</span>
-          {profile.role.toUpperCase()}
-        </div>
-
-        {/* Name */}
-        <h1
-          className="animate-fade-up"
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(3rem, 8vw, 6.5rem)',
-            fontWeight: 800,
-            lineHeight: 1,
-            color: 'var(--text-primary)',
-            margin: '0 0 0.4rem 0',
-            animationDelay: '0.2s',
-          }}
-        >
-          {profile.name}
-        </h1>
-
-        {/* Roman name */}
-        <div
-          className="animate-fade-up"
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.2rem, 3vw, 2rem)',
-            fontWeight: 400,
-            color: 'var(--text-muted)',
-            marginBottom: '2.5rem',
-            letterSpacing: '0.06em',
-            animationDelay: '0.3s',
-          }}
-        >
-          Yuji Mukai
-        </div>
-
-        {/* Divider line */}
-        <div
-          className="animate-fade-up"
-          style={{
-            width: '3rem',
-            height: '1px',
-            background: 'var(--accent)',
-            marginBottom: '2rem',
-            animationDelay: '0.35s',
-          }}
-        />
-
-        {/* Summary */}
-        <div
-          className="animate-fade-up"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.6rem',
-            maxWidth: '42rem',
-            marginBottom: '2rem',
-            animationDelay: '0.37s',
-          }}
-        >
-          {profile.summary.map((paragraph, i) => (
-            <p
-              key={i}
+          {/* Main column */}
+          <div style={{ flex: '1 1 28rem', minWidth: 0 }}>
+            {/* Name */}
+            <h1
               style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '1rem',
-                color: 'var(--text-muted)',
-                lineHeight: 1.8,
-                margin: 0,
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                fontWeight: 900,
+                lineHeight: 1,
+                color: 'var(--text-primary)',
+                margin: '0 0 0.4rem 0',
               }}
             >
-              {paragraph}
-            </p>
-          ))}
-        </div>
+              {profile.name}
+            </h1>
 
-        {/* Email */}
-        <div
-          className="animate-fade-up"
-          style={{ marginBottom: '2rem', animationDelay: '0.4s' }}
-        >
-          <a
-            href={`mailto:${profile.email}`}
-            className="link-muted"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.75rem',
-              letterSpacing: '0.05em',
-            }}
-          >
-            {profile.email}
-          </a>
-        </div>
+            {/* Roman name */}
+            <div
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(1.1rem, 2.6vw, 1.6rem)',
+                fontWeight: 400,
+                color: 'var(--text-muted)',
+                marginBottom: '2rem',
+                letterSpacing: '0.03em',
+              }}
+            >
+              Yuji Mukai
+            </div>
 
-        {/* Social links */}
-        <nav aria-label="SNSリンク" className="animate-fade-up" style={{ animationDelay: '0.5s' }}>
-          <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', listStyle: 'none', padding: 0, margin: 0 }}>
-            {profile.socialLinks.map((link) => (
-              <li key={link.platform}>
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost"
+            {/* Divider line */}
+            <div
+              style={{
+                width: '3rem',
+                height: '1px',
+                background: 'var(--accent)',
+                marginBottom: '2rem',
+              }}
+            />
+
+            {/* Summary */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem', maxWidth: '38rem', marginBottom: '2.5rem' }}>
+              {profile.summary.map((paragraph, i) => (
+                <p
+                  key={i}
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '1rem',
+                    color: 'var(--text-muted)',
+                    lineHeight: 1.8,
+                    margin: 0,
+                  }}
                 >
-                  {link.platform}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            {/* Social links */}
+            <nav aria-label="SNSリンク">
+              <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', listStyle: 'none', padding: 0, margin: 0 }}>
+                {profile.socialLinks.map((link) => (
+                  <li key={link.platform}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-ghost"
+                    >
+                      {link.platform}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          {/* Field list (schema-record motif) */}
+          <div className="note-block" style={{ flex: '0 1 19rem', minWidth: '17rem' }}>
+            <dl className="field-list">
+              <dt>role</dt>
+              <dd>{profile.role}</dd>
+              <dt>company</dt>
+              <dd>{primaryRole.company}</dd>
+              <dt>since</dt>
+              <dd>{since}</dd>
+              <dt>stack</dt>
+              <dd>{stack}</dd>
+              <dt>certs</dt>
+              <dd>{certifications.length}</dd>
+              <dt>contact</dt>
+              <dd>
+                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
       </div>
 
       {/* Bottom fade */}
