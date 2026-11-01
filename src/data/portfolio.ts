@@ -37,6 +37,13 @@ export interface TalkEntry {
   slideUrl: string;
 }
 
+export interface PublicationEntry {
+  issue: string;
+  circle: string;
+  title: string;
+  url: string;
+}
+
 export interface ActivityLink {
   label: string;
   url: string;
@@ -53,6 +60,7 @@ export interface PortfolioData {
   skills: SkillCategory[];
   certifications: string[];
   talks: TalkEntry[];
+  publications: PublicationEntry[];
   otherActivities: OtherActivity[];
 }
 
@@ -191,21 +199,20 @@ const portfolio: PortfolioData = {
       slideUrl: 'https://speakerdeck.com/ugmuka/snowflakedeyarakasitashi-nodui-chu-fa',
     },
   ],
+  publications: [
+    {
+      issue: '技術書典21',
+      circle: 'RONNABYTE・ちゅらデータ技術書典支部',
+      title: 'dbtとそれにまつわる技術について語ろうじゃないか',
+      url: 'https://techbookfest.org/product/r35huDmDSWBjvqU6uYwENZ',
+    },
+  ],
   otherActivities: [
     {
       description: 'データ基盤・Snowflake・dbtを中心にQiita5件 / Zenn8件を執筆。',
       links: [
         { label: 'Qiita', url: 'https://qiita.com/ugmuka' },
         { label: 'Zenn', url: 'https://zenn.dev/ugmuka' },
-      ],
-    },
-    {
-      description: '技術書典21にサークル「RONNABYTE・ちゅらデータ技術書典支部」として出展。「dbtとそれにまつわる技術について語ろうじゃないか」を頒布。',
-      links: [
-        {
-          label: 'dbtとそれにまつわる技術について語ろうじゃないか',
-          url: 'https://techbookfest.org/product/r35huDmDSWBjvqU6uYwENZ',
-        },
       ],
     },
     {

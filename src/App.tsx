@@ -4,6 +4,7 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Talks from './components/Talks';
+import Publications from './components/Publications';
 import Others from './components/Others';
 
 const App: React.FC = () => {
@@ -31,6 +32,8 @@ const App: React.FC = () => {
         <Certifications />
         <div className="section-divider" />
         <Talks />
+        <div className="section-divider" />
+        <Publications />
         <div className="section-divider" />
         <Others />
       </main>
