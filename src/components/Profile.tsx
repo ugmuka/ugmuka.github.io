@@ -53,7 +53,7 @@ const Profile: React.FC = () => {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-                fontWeight: 800,
+                fontWeight: 900,
                 lineHeight: 1,
                 color: 'var(--text-primary)',
                 margin: '0 0 0.4rem 0',
