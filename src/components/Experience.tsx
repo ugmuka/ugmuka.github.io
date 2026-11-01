@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.65rem',
+                    fontSize: '0.72rem',
                     letterSpacing: '0.1em',
                     color: 'var(--accent)',
                     background: 'var(--accent-glow)',
@@ -52,7 +52,7 @@ const Experience: React.FC = () => {
               <p
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.75rem',
+                  fontSize: '0.8rem',
                   color: 'var(--text-muted)',
                   letterSpacing: '0.06em',
                   marginBottom: '1.5rem',
@@ -68,9 +68,9 @@ const Experience: React.FC = () => {
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '0.6rem',
+                        fontSize: '0.72rem',
                         color: 'var(--accent)',
-                        opacity: 0.5,
+                        opacity: 0.65,
                         flexShrink: 0,
                         marginTop: '0.15rem',
                       }}
@@ -101,7 +101,7 @@ const Experience: React.FC = () => {
                         <span
                           style={{
                             fontFamily: 'var(--font-mono)',
-                            fontSize: '0.6rem',
+                            fontSize: '0.7rem',
                             letterSpacing: '0.08em',
                             color: 'var(--accent)',
                             flexShrink: 0,
@@ -113,8 +113,8 @@ const Experience: React.FC = () => {
                       <div
                         style={{
                           fontFamily: 'var(--font-mono)',
-                          fontSize: '0.65rem',
-                          letterSpacing: '0.06em',
+                          fontSize: '0.78rem',
+                          letterSpacing: '0.04em',
                           color: 'var(--text-muted)',
                           marginBottom: '0.4rem',
                         }}

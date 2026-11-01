@@ -2,9 +2,12 @@ import portfolio from '../data/portfolio';
 
 const Profile: React.FC = () => {
   const { profile, experiences, skills, certifications } = portfolio;
-  const currentRole = experiences[0];
+  // 本業 = 在籍開始日が最も古い会社（兼業・業務委託より優先してHeroに表示する）
+  const primaryRole = experiences.reduce((earliest, entry) =>
+    entry.period.split('〜')[0] < earliest.period.split('〜')[0] ? entry : earliest
+  );
   const stack = skills.find((s) => s.category.startsWith('Cloud'))?.items.join(' / ');
-  const since = currentRole.period.split('〜')[0];
+  const since = primaryRole.period.split('〜')[0];
 
   return (
     <section
@@ -52,7 +55,7 @@ const Profile: React.FC = () => {
             <h1
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: 900,
                 lineHeight: 1,
                 color: 'var(--text-primary)',
@@ -129,7 +132,7 @@ const Profile: React.FC = () => {
               <dt>role</dt>
               <dd>{profile.role}</dd>
               <dt>company</dt>
-              <dd>{currentRole.company}</dd>
+              <dd>{primaryRole.company}</dd>
               <dt>since</dt>
               <dd>{since}</dd>
               <dt>stack</dt>

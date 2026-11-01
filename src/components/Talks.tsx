@@ -31,7 +31,7 @@ const Talks: React.FC = () => {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.65rem',
+                  fontSize: '0.72rem',
                   letterSpacing: '0.08em',
                   color: 'var(--accent)',
                   flexShrink: 0,
@@ -46,8 +46,8 @@ const Talks: React.FC = () => {
                 <div
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.08em',
+                    fontSize: '0.75rem',
+                    letterSpacing: '0.04em',
                     color: 'var(--text-muted)',
                     marginBottom: '0.25rem',
                   }}
