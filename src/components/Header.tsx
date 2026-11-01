@@ -29,25 +29,10 @@ const Header: React.FC = () => {
       }}
     >
       <nav
-        className="section-container flex items-center justify-between h-14"
+        className="section-container flex items-center justify-end h-14"
         style={{ padding: '0 1.5rem' }}
         aria-label="サイトナビゲーション"
       >
-        {/* Monogram logo */}
-        <a
-          href="#profile"
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.85rem',
-            fontWeight: 500,
-            color: 'var(--accent)',
-            textDecoration: 'none',
-            letterSpacing: '0.08em',
-          }}
-        >
-          YM<span style={{ color: 'var(--text-muted)', marginLeft: '0.4rem', fontSize: '0.65rem' }}>_</span>
-        </a>
-
         {/* Desktop nav */}
         <ul className="hidden sm:flex gap-8 list-none m-0 p-0">
           {navItems.map((item) => (
