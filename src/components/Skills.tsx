@@ -4,8 +4,8 @@ const Skills: React.FC = () => {
   const { skills } = portfolio;
 
   return (
-    <section id="skills" style={{ padding: '4rem 1.5rem', background: 'var(--bg-subtle)' }}>
-      <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
+    <section id="skills" className="section-pad-subtle">
+      <div className="section-container">
 
         <h2 className="section-title">Skills</h2>
 

@@ -86,6 +86,20 @@ body {
   scroll-margin-top: 5rem;
 }
 
+.section-container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.section-pad {
+  padding: 4rem 1.5rem;
+}
+
+.section-pad-subtle {
+  padding: 4rem 1.5rem;
+  background: var(--bg-subtle);
+}
+
 .tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
