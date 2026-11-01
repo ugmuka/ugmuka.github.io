@@ -37,6 +37,13 @@ export interface TalkEntry {
   slideUrl: string;
 }
 
+export interface PublicationEntry {
+  issue: string;
+  circle: string;
+  title: string;
+  url: string;
+}
+
 export interface ActivityLink {
   label: string;
   url: string;
@@ -53,6 +60,7 @@ export interface PortfolioData {
   skills: SkillCategory[];
   certifications: string[];
   talks: TalkEntry[];
+  publications: PublicationEntry[];
   otherActivities: OtherActivity[];
 }
 
@@ -189,6 +197,14 @@ const portfolio: PortfolioData = {
       event: 'Snowflakeの小技LT〜ChatGPTも知らない？秘密のテクニック教えて！〜',
       title: 'Snowflakeでやらかした時の対処法',
       slideUrl: 'https://speakerdeck.com/ugmuka/snowflakedeyarakasitashi-nodui-chu-fa',
+    },
+  ],
+  publications: [
+    {
+      issue: '技術書典21',
+      circle: 'RONNABYTE・ちゅらデータ技術書典支部',
+      title: 'dbtとそれにまつわる技術について語ろうじゃないか',
+      url: 'https://techbookfest.org/product/r35huDmDSWBjvqU6uYwENZ',
     },
   ],
   otherActivities: [

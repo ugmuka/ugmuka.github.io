@@ -10,6 +10,7 @@ const navItems: NavItem[] = [
   { label: 'SKILLS', targetId: 'skills' },
   { label: 'CERTS', targetId: 'certifications' },
   { label: 'TALKS', targetId: 'talks' },
+  { label: 'PUBLICATIONS', targetId: 'publications' },
   { label: 'OTHERS', targetId: 'others' },
 ];
 
