@@ -4,9 +4,8 @@ const Talks: React.FC = () => {
   const { talks } = portfolio;
 
   return (
-    <section id="talks" style={{ padding: '4rem 1.5rem', background: 'var(--bg-subtle)' }}>
-      <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
-
+    <section id="talks" className="section-pad-subtle">
+      <div className="section-container">
         <h2 className="section-title">Talks</h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

@@ -16,6 +16,7 @@
       "Bash(git merge-base *)",
       "Bash(git fetch *)",
       "Bash(git pull *)",
+      "Bash(git push *)",
       "Bash(gh issue *)",
       "Bash(gh pr view *)",
       "Bash(gh pr list *)",
@@ -61,7 +62,6 @@
       "Bash(nc *)",
       "Bash(ncat *)",
       "Bash(telnet *)",
-      "Bash(git push *)",
       "Bash(git reset *)",
       "Bash(osascript *)",
       "Bash(open *)",
@@ -107,9 +107,17 @@
   },
   "enabledPlugins": {
     "claude-md-management@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "ponytail@ponytail": true
   },
-  "extraKnownMarketplaces": {},
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
   "language": "ja",
   "sandbox": {
     "enabled": true,

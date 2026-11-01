@@ -29,8 +29,8 @@ const Header: React.FC = () => {
       }}
     >
       <nav
-        style={{ maxWidth: '56rem', margin: '0 auto', padding: '0 1.5rem' }}
-        className="flex items-center justify-between h-14"
+        className="section-container flex items-center justify-between h-14"
+        style={{ padding: '0 1.5rem' }}
         aria-label="サイトナビゲーション"
       >
         {/* Monogram logo */}

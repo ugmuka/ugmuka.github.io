@@ -4,9 +4,8 @@ const Publications: React.FC = () => {
   const { publications } = portfolio;
 
   return (
-    <section id="publications" style={{ padding: '4rem 1.5rem' }}>
-      <div style={{ maxWidth: '56rem', margin: '0 auto' }}>
-
+    <section id="publications" className="section-pad">
+      <div className="section-container">
         <h2 className="section-title">Publications</h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
